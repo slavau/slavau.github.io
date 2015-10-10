@@ -1,3 +1,8 @@
+---
+title: Go - practice of asynchronous communication 
+layout: post
+---
+
 # Go - practice of asynchronous communication
 
 This post explores some aspects of asynchronous communication in golang. It covers channels, executions in the main OS thread and how to move blocking operation into a separate go routine.
