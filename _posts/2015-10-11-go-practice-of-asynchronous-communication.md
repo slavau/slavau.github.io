@@ -20,17 +20,17 @@ we should be able to synchronize execution of these goroutines. Channels provide
 and they work alongside goroutines. Sometimes it does not matter what is being sent into the
 channel - it’s only a fact of sending what it matters. You could see :
 
-{% highlight go %}
+``` go
 done := make(chan bool)
 /// [...]
 done <- true
-{% endhighlight %}
+```
 
 The size of the boolean is platform dependent, but quite frankly it’s not the case when we should worry
 about it's size. There is a way to not sending anything into the channel at all, more precisely
 send an empty struct into the channel.
 
-```golang
+``` go
 func main() {
     done := make(chan struct{})
     // start another goroutine; when it completes signal on the channel
@@ -51,7 +51,7 @@ You can also specify the direction of data movement on a channel by indicating t
 
 Let's look at the previous example again:
 
-```golang
+``` go
 func main() {
     done := make(chan struct{})
     // start another goroutine; when it completes signal on the channel
@@ -66,7 +66,7 @@ We only write data into the channel in the separate goroutine and we will only b
 data from that channel in main goroutine. In this case it's useful and cleaner to
 declare this channel as send-only and receive-only correspondingly
 
-```golang
+``` go
 func main() {
     done := make(chan struct{})
     go func(done chan<- struct{}) { // declares it's a send-only channel
@@ -81,7 +81,7 @@ Now, if we pass channel into the function like that it will become a send-only c
 function the channel will still remain bidirectional. It's also possible to transform channel to
 a receive-only or send-only without passing it into a function:
 
-```golang
+``` go
 done := make(chan struct{})
 writingChan := (chan<- struct{})(done) // first parathesis are not necessary
 receiveOnlyChan := (<-chan struct{})(done) // first paramthesis are necessary
@@ -99,7 +99,7 @@ goroutines will be happily executing in the different threads in parallel.
 
 To move our business logic execution into a separate thread, you can just send function into the main one. Here is an example:
 
-```golang
+``` go
 package main
 
 import (
@@ -147,7 +147,7 @@ func main() {
 
 Quite regularly we are dealing with blocking IO calls, the good thing is they are really easy to improve:
 
-```golang
+``` go
 package main
 
 import "os"
