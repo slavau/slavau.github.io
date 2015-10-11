@@ -20,7 +20,7 @@ we should be able to synchronize execution of these goroutines. Channels provide
 and they work alongside goroutines. Sometimes it does not matter what is being sent into the
 channel - it’s only a fact of sending what it matters. You could see :
 
-{% highlight golang %}
+{% highlight go %}
 done := make(chan bool)
 /// [...]
 done <- true
