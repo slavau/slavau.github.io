@@ -30,7 +30,7 @@ The size of the boolean is platform dependent, but quite frankly it’s not the 
 about it's size. There is a way to not sending anything into the channel at all, more precisely
 send an empty struct into the channel.
 
-```go
+```ruby
 func main() {
     done := make(chan struct{})
     // start another goroutine; when it completes signal on the channel
