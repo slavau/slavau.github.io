@@ -24,7 +24,7 @@ channel - it’s only a fact of sending what it matters. You could see :
 done := make(chan bool)
 /// [...]
 done <- true
-{% highlight %}
+{% endhighlight %}
 
 The size of the boolean is platform dependent, but quite frankly it’s not the case when we should worry
 about it's size. There is a way to not sending anything into the channel at all, more precisely
