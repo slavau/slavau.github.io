@@ -1,13 +1,12 @@
 # Site settings
-title: Clean Blog
+title: Personal Blog
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+email: slava.ustovytski@gmail.com
+description: "Blog about technology, languages and open source projects"
 baseurl: ""
 url: "slavau.github.io"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
+twitter_username: SlavaUstovytski
+github_username:  slavau
 
 # Build settings
 markdown: redcarpet
