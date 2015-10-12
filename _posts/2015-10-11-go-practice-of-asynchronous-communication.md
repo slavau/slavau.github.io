@@ -1,7 +1,8 @@
 ---
-title: Go - practice of asynchronous communication 
+title: Go - practice of asynchronous communication
 layout: post
 author: Slava Ustovytski
+comments: true
 ---
 
 # Go - practice of asynchronous communication
